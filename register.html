@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Lingofy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="bg-light auth-page-background">
+    <!-- Decorative Background Elements -->
+    <div class="auth-background-shapes">
+        <div class="auth-shape auth-shape-1"></div>
+        <div class="auth-shape auth-shape-2"></div>
+        <div class="auth-shape auth-shape-3"></div>
+    </div>
+
+    <div class="container min-vh-100 d-flex align-items-center justify-content-center py-5 position-relative">
+        <div class="auth-card card shadow-lg border-0">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <div class="auth-icon-wrapper mb-3">
+                        <i class="bi bi-person-plus"></i>
+                    </div>
+                    <h2 class="fw-bold mb-2">Create Account</h2>
+                    <p class="text-muted mb-0">Join Lingofy to start your learning journey</p>
+                </div>
+
+                <form id="registerForm" novalidate>
+                    <!-- Full Name -->
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label fw-semibold">Full Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person"></i></span>
+                            <input type="text" class="form-control" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="invalid-feedback d-none">
+                            <i class="bi bi-exclamation-circle me-1"></i>Please enter your full name
+                        </div>
+                    </div>
+
+                    <!-- Email/Username -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-semibold">Email/Username</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                            <input type="text" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="invalid-feedback d-none">
+                            <i class="bi bi-exclamation-circle me-1"></i>Please enter a valid email or username
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label fw-semibold">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                        <div class="invalid-feedback d-none">
+                            <i class="bi bi-exclamation-circle me-1"></i>Password must be at least 6 characters
+                        </div>
+                    </div>
+
+                    <!-- Role -->
+                    <div class="mb-4">
+                        <label for="role" class="form-label fw-semibold">Role</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+                            <select class="form-select" id="role" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="student">Student</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <div class="invalid-feedback d-none">
+                            <i class="bi bi-exclamation-circle me-1"></i>Please select a role
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary w-100 btn-lg mb-3">
+                        <i class="bi bi-person-plus me-2"></i>Create Account
+                    </button>
+
+                    <div class="text-center">
+                        <p class="text-muted mb-0">Already have an account? <a href="login.html" class="text-primary fw-semibold">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <span class="fw-bold">
+                    <span style="color: #0D6EFD;">Lingo</span><span style="color: #01438F;">fy</span>
+                </span>
+                    </h5>
+                    <p class="text-muted">Test your language level with confidence. Master languages through comprehensive assessments designed for students and educators.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="text-white me-3" title="Visit our Facebook page">
+                            <i class="bi bi-facebook" style="font-size: 1.5rem;"></i>
+                        </a>
+                        <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="text-white me-3" title="Visit our Twitter/X page">
+                            <i class="bi bi-twitter" style="font-size: 1.5rem;"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="text-white me-3" title="Visit our LinkedIn page">
+                            <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="text-white" title="Visit our Instagram page">
+                            <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="student-tests.html" class="text-muted text-decoration-none">Tests</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="login.html" class="text-muted text-decoration-none">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>Coding School
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>0770000000
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i>info@frenchquiz.com
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Newsletter</h6>
+                    <p class="text-muted small">Subscribe to get updates on new tests and features.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-primary" type="button">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">&copy; 2024 Lingofy. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/register.js"></script>
+</body>
+</html>
+

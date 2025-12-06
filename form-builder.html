@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Builder - Lingofy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="admin-dashboard.html">
+                <span class="fw-bold">
+                    <span style="color: #0D6EFD;">Lingo</span><span style="color: #01438F;">fy</span>
+                </span>
+                <i class="bi bi-arrow-left ms-3"></i>
+                <span>Back to Dashboard</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+            <!-- Left Panel - Form Settings -->
+            <div class="col-lg-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-header bg-white border-bottom py-3">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="bi bi-gear me-2"></i>Form Settings
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <label for="formTitle" class="form-label fw-semibold">Form Title</label>
+                            <input type="text" class="form-control" id="formTitle" placeholder="Enter form title">
+                        </div>
+                        <div class="mb-4">
+                            <label for="formLanguage" class="form-label fw-semibold">Language</label>
+                            <select class="form-select" id="formLanguage" required>
+                                <option value="">Select Language</option>
+                                <option value="french">French (Français)</option>
+                                <option value="english">English</option>
+                                <option value="spanish">Spanish (Español)</option>
+                                <option value="german">German (Deutsch)</option>
+                                <option value="italian">Italian (Italiano)</option>
+                                <option value="arabic">Arabic (العربية)</option>
+                                <option value="chinese">Chinese (中文)</option>
+                                <option value="japanese">Japanese (日本語)</option>
+                                <option value="korean">Korean (한국어)</option>
+                                <option value="portuguese">Portuguese (Português)</option>
+                                <option value="russian">Russian (Русский)</option>
+                                <option value="turkish">Turkish (Türkçe)</option>
+                            </select>
+                            <div class="invalid-feedback d-none">
+                                <i class="bi bi-exclamation-circle me-1"></i>Please select a language
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="formDescription" class="form-label fw-semibold">Description</label>
+                            <textarea class="form-control" id="formDescription" rows="4" placeholder="Enter form description"></textarea>
+                        </div>
+                        <button class="btn btn-primary w-100" id="saveFormBtn">
+                            <i class="bi bi-save me-2"></i>Save Form
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Question Builder -->
+            <div class="col-lg-8">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white border-bottom py-3">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="bi bi-plus-circle me-2"></i>Question Builder
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Question Input -->
+                        <div class="mb-4">
+                            <label for="questionText" class="form-label fw-semibold">Question Text</label>
+                            <div class="formatting-toolbar mb-2 d-flex gap-2 flex-wrap">
+                                <button class="btn btn-sm btn-outline-secondary" type="button" data-format="bold" title="Bold">
+                                    <i class="bi bi-type-bold"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary" type="button" data-format="italic" title="Italic">
+                                    <i class="bi bi-type-italic"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary" type="button" data-format="underline" title="Underline">
+                                    <i class="bi bi-type-underline"></i>
+                                </button>
+                                <select class="form-select form-select-sm" id="fontStyle" style="width: auto;">
+                                    <option value="sans">Sans Serif</option>
+                                    <option value="serif">Serif</option>
+                                    <option value="mono">Monospace</option>
+                                </select>
+                            </div>
+                            <textarea class="form-control" id="questionText" rows="3" placeholder="Enter your question"></textarea>
+                        </div>
+
+                        <!-- Question Type -->
+                        <div class="mb-4">
+                            <label for="questionType" class="form-label fw-semibold">Question Type</label>
+                            <select class="form-select" id="questionType">
+                                <option value="text">Text Input</option>
+                                <option value="radio">Multiple Choice (Radio)</option>
+                                <option value="select">Dropdown (Select)</option>
+                            </select>
+                        </div>
+
+                        <!-- MCQ Options Manager -->
+                        <div id="mcqOptions" class="mb-4 d-none">
+                            <label class="form-label fw-semibold">Options</label>
+                            <div id="optionsContainer">
+                                <div class="option-item mb-2 d-flex align-items-center gap-2">
+                                    <input type="text" class="form-control" placeholder="Option text">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="correctOption" value="0">
+                                        <label class="form-check-label small">Correct</label>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-danger" type="button" onclick="removeOption(this)">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary" type="button" onclick="addOption()">
+                                <i class="bi bi-plus-circle me-1"></i>Add Option
+                            </button>
+                        </div>
+
+                        <!-- Required Toggle -->
+                        <div class="mb-4">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="requiredToggle" checked>
+                                <label class="form-check-label fw-semibold" for="requiredToggle">
+                                    Required Question
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Add Question Button -->
+                        <button class="btn btn-primary w-100 mb-4" onclick="addQuestion()">
+                            <i class="bi bi-plus-circle me-2"></i>Add Question
+                        </button>
+
+                        <!-- Questions Preview -->
+                        <div id="questionsPreview">
+                            <h6 class="fw-bold mb-3">
+                                <i class="bi bi-list-check me-2"></i>Added Questions
+                            </h6>
+                            <div id="questionsList">
+                                <div class="empty-questions-state text-center py-5">
+                                    <div class="empty-questions-illustration mb-3">
+                                        <svg width="200" height="150" viewBox="0 0 200 150" class="empty-svg">
+                                            <circle cx="100" cy="75" r="50" fill="rgba(13, 110, 253, 0.1)" stroke="rgba(13, 110, 253, 0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+                                            <line x1="80" y1="75" x2="120" y2="75" stroke="rgba(13, 110, 253, 0.5)" stroke-width="2"/>
+                                            <line x1="100" y1="55" x2="100" y2="95" stroke="rgba(13, 110, 253, 0.5)" stroke-width="2"/>
+                                            <circle cx="100" cy="75" r="8" fill="rgba(13, 110, 253, 0.3)"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-muted mb-2 fw-semibold">No questions added yet</p>
+                                    <p class="text-muted small">Start building your test by adding questions above</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <span class="fw-bold">
+                            <span style="color: #0D6EFD;">Lingo</span><span style="color: #01438F;">fy</span>
+                        </span>
+                    </h5>
+                    <p class="text-muted">Create and manage multi-language assessments with our powerful form builder.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="admin-dashboard.html" class="text-muted text-decoration-none">Dashboard</a></li>
+                        <li class="mb-2"><a href="admin-theme.html" class="text-muted text-decoration-none">Settings</a></li>
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>Coding School
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>0770000000
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">&copy; 2024 Lingofy. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/form-builder.js"></script>
+</body>
+</html>
+

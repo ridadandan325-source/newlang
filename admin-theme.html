@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Customization - Lingofy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="admin-dashboard.html">
+                <span class="fw-bold">
+                    <span style="color: #0D6EFD;">Lingo</span><span style="color: #01438F;">fy</span>
+                </span>
+                <i class="bi bi-arrow-left ms-3"></i>
+                <span>Back to Dashboard</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-fluid py-4">
+        <div class="row g-4">
+            <!-- Left Panel - Theme Controls -->
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white border-bottom py-3">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="bi bi-palette me-2"></i>Theme Customization
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Primary Color -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold mb-3">Primary Color</label>
+                            <div class="color-palette d-flex flex-wrap gap-3">
+                                <label class="color-option selected" data-color="#0d6efd" style="background-color: #0d6efd; cursor: pointer;" title="Blue">
+                                    <input type="radio" name="primaryColor" value="#0d6efd" checked style="position: absolute; opacity: 0;">
+                                </label>
+                                <label class="color-option" data-color="#198754" style="background-color: #198754; cursor: pointer;" title="Green">
+                                    <input type="radio" name="primaryColor" value="#198754" style="position: absolute; opacity: 0;">
+                                </label>
+                                <label class="color-option" data-color="#0dcaf0" style="background-color: #0dcaf0; cursor: pointer;" title="Cyan">
+                                    <input type="radio" name="primaryColor" value="#0dcaf0" style="position: absolute; opacity: 0;">
+                                </label>
+                                <label class="color-option" data-color="#6f42c1" style="background-color: #6f42c1; cursor: pointer;" title="Purple">
+                                    <input type="radio" name="primaryColor" value="#6f42c1" style="position: absolute; opacity: 0;">
+                                </label>
+                                <label class="color-option" data-color="#fd7e14" style="background-color: #fd7e14; cursor: pointer;" title="Orange">
+                                    <input type="radio" name="primaryColor" value="#fd7e14" style="position: absolute; opacity: 0;">
+                                </label>
+                                <label class="color-option" data-color="#20c997" style="background-color: #20c997; cursor: pointer;" title="Teal">
+                                    <input type="radio" name="primaryColor" value="#20c997" style="position: absolute; opacity: 0;">
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Font Style -->
+                        <div class="mb-4">
+                            <label for="fontStyleSelect" class="form-label fw-semibold">Font Style</label>
+                            <select class="form-select" id="fontStyleSelect">
+                                <option value="sans">Sans Serif</option>
+                                <option value="rounded">Rounded</option>
+                                <option value="serif">Academic Serif</option>
+                            </select>
+                        </div>
+
+                        <!-- Button Shape -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold mb-3">Button Shape</label>
+                            <div class="btn-group w-100" role="group">
+                                <input type="radio" class="btn-check" name="buttonShape" id="rounded" value="rounded" checked>
+                                <label class="btn btn-outline-primary" for="rounded">Rounded</label>
+
+                                <input type="radio" class="btn-check" name="buttonShape" id="minimal" value="minimal">
+                                <label class="btn btn-outline-primary" for="minimal">Minimal</label>
+
+                                <input type="radio" class="btn-check" name="buttonShape" id="square" value="square">
+                                <label class="btn btn-outline-primary" for="square">Square</label>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary w-100" onclick="applyTheme()">
+                            <i class="bi bi-check-circle me-2"></i>Apply Theme
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Live Preview -->
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white border-bottom py-3">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="bi bi-eye me-2"></i>Live Preview
+                        </h5>
+                    </div>
+                    <div class="card-body" id="themePreview">
+                        <div class="preview-section mb-4">
+                            <h6 class="fw-bold mb-3">Buttons</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button class="btn btn-primary">Primary Button</button>
+                                <button class="btn btn-secondary">Secondary Button</button>
+                                <button class="btn btn-outline-primary">Outline Button</button>
+                            </div>
+                        </div>
+
+                        <div class="preview-section mb-4">
+                            <h6 class="fw-bold mb-3">Form Inputs</h6>
+                            <div class="mb-2">
+                                <input type="text" class="form-control" placeholder="Text input">
+                            </div>
+                            <div class="mb-2">
+                                <select class="form-select">
+                                    <option>Select option</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="preview-section mb-4">
+                            <h6 class="fw-bold mb-3">Badges</h6>
+                            <span class="badge bg-success me-2">
+                                <i class="bi bi-check-circle me-1"></i>Active
+                            </span>
+                            <span class="badge bg-secondary">
+                                <i class="bi bi-x-circle me-1"></i>Inactive
+                            </span>
+                        </div>
+
+                        <div class="preview-section">
+                            <h6 class="fw-bold mb-3">Cards</h6>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">Sample Card</h6>
+                                    <p class="card-text text-muted small">This is a preview card showing how the theme will look.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/theme-customization.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body class="bg-light">
+    <!-- Animated Background -->
+    <div class="error-background">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </div>
+
+    <div class="container min-vh-100 d-flex align-items-center justify-content-center py-5 position-relative">
+        <div class="text-center">
+            <!-- Animated 404 Illustration -->
+            <div class="error-illustration mb-4 animated-bounce">
+                <div class="error-icon-wrapper">
+                    <i class="bi bi-exclamation-triangle text-warning"></i>
+                </div>
+                <div class="error-number">404</div>
+            </div>
+            
+            <h1 class="display-1 fw-bold mb-3 animated-fade-in">404</h1>
+            <h2 class="mb-3 animated-fade-in-delay">Page Not Found</h2>
+            <p class="text-muted mb-4 lead animated-fade-in-delay-2">
+                Oops! The page you're looking for doesn't exist or has been moved.<br>
+                Don't worry, let's get you back on track!
+            </p>
+            
+            <!-- Helpful Links -->
+            <div class="helpful-links mb-4">
+                <p class="text-muted small mb-2">You might be looking for:</p>
+                <div class="d-flex flex-wrap justify-content-center gap-2">
+                    <a href="index.html" class="badge bg-primary text-decoration-none">Home</a>
+                    <a href="student-tests.html" class="badge bg-primary text-decoration-none">Tests</a>
+                    <a href="contact.html" class="badge bg-primary text-decoration-none">Contact</a>
+                    <a href="login.html" class="badge bg-primary text-decoration-none">Login</a>
+                </div>
+            </div>
+            
+            <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                <a href="index.html" class="btn btn-primary btn-lg animated-fade-in-delay-3">
+                    <i class="bi bi-house me-2"></i>Go Home
+                </a>
+                <button class="btn btn-outline-primary btn-lg animated-fade-in-delay-3" onclick="history.back()">
+                    <i class="bi bi-arrow-left me-2"></i>Go Back
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5 mt-5 position-relative" style="z-index: 1;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <span style="color: #0D6EFD;">Lingo</span><span style="color: #01438F;">fy</span>
+                    </h5>
+                    <p class="text-muted">Test your language level with confidence. Master languages through comprehensive assessments designed for students and educators.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="student-tests.html" class="text-muted text-decoration-none">Tests</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>Coding School
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>0770000000
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">&copy; 2024 FrenchQuiz. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+

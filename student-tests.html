@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Tests - Lingofy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="fw-bold" style="font-size: 1.3rem;">
+                    <span style="color: #0D6EFD;">Lingo</span><span style="color: #01438F;">fy</span>
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" href="student-tests.html">Tests</a>
+                    <a class="nav-link" href="student-profile.html">Profile</a>
+                    <a class="nav-link" href="index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Decorative Background -->
+    <div class="tests-page-decoration">
+        <div class="test-page-shape test-page-shape-1"></div>
+        <div class="test-page-shape test-page-shape-2"></div>
+    </div>
+
+    <div class="container py-5 position-relative">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h1 class="mb-0 fw-bold">
+                <i class="bi bi-clipboard-check text-primary me-2"></i>Available Language Tests
+            </h1>
+            <div class="test-count-badge">
+                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2">
+                    <i class="bi bi-list-check me-2"></i><span id="testCount">3</span> Tests Available
+                </span>
+            </div>
+        </div>
+
+        <!-- Tests Grid -->
+        <div class="row g-4" id="testsGrid">
+            <div class="col-md-6 col-lg-4">
+                <div class="test-card card border-0 shadow-sm h-100">
+                    <div class="test-card-header position-relative">
+                        <div class="test-card-icon">
+                            <i class="bi bi-journal-text"></i>
+                        </div>
+                        <div class="test-card-badge">Grammar</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3">Grammar Basics</h5>
+                        <p class="card-text text-muted mb-3">Test your understanding of fundamental grammar rules and structures.</p>
+                        <div class="mb-2">
+                            <span class="badge bg-info">
+                                <i class="bi bi-translate me-1"></i>French
+                            </span>
+                        </div>
+                        <div class="test-card-meta mb-3">
+                            <div class="d-flex align-items-center text-muted mb-2">
+                                <i class="bi bi-clock me-2"></i>
+                                <span>15 minutes</span>
+                            </div>
+                            <div class="d-flex align-items-center text-muted mb-2">
+                                <i class="bi bi-question-circle me-2"></i>
+                                <span>15 Questions</span>
+                            </div>
+                            <div class="d-flex align-items-center text-success">
+                                <i class="bi bi-check-circle me-2"></i>
+                                <span>Available</span>
+                            </div>
+                        </div>
+                        <a href="test-taking.html?test=1" class="btn btn-primary w-100">
+                            <i class="bi bi-play-circle me-2"></i>Start Test
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="test-card card border-0 shadow-sm h-100">
+                    <div class="test-card-header position-relative">
+                        <div class="test-card-icon">
+                            <i class="bi bi-book"></i>
+                        </div>
+                        <div class="test-card-badge">Vocabulary</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3">Vocabulary Assessment</h5>
+                        <p class="card-text text-muted mb-3">Expand your vocabulary with this comprehensive assessment.</p>
+                        <div class="mb-2">
+                            <span class="badge bg-info">
+                                <i class="bi bi-translate me-1"></i>English
+                            </span>
+                        </div>
+                        <div class="test-card-meta mb-3">
+                            <div class="d-flex align-items-center text-muted mb-2">
+                                <i class="bi bi-clock me-2"></i>
+                                <span>20 minutes</span>
+                            </div>
+                            <div class="d-flex align-items-center text-muted mb-2">
+                                <i class="bi bi-question-circle me-2"></i>
+                                <span>20 Questions</span>
+                            </div>
+                            <div class="d-flex align-items-center text-success">
+                                <i class="bi bi-check-circle me-2"></i>
+                                <span>Available</span>
+                            </div>
+                        </div>
+                        <a href="test-taking.html?test=2" class="btn btn-primary w-100">
+                            <i class="bi bi-play-circle me-2"></i>Start Test
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="test-card card border-0 shadow-sm h-100">
+                    <div class="test-card-header position-relative">
+                        <div class="test-card-icon">
+                            <i class="bi bi-file-text"></i>
+                        </div>
+                        <div class="test-card-badge">Reading</div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3">Reading Comprehension</h5>
+                        <p class="card-text text-muted mb-3">Improve your reading skills with texts and comprehension questions.</p>
+                        <div class="mb-2">
+                            <span class="badge bg-info">
+                                <i class="bi bi-translate me-1"></i>Spanish
+                            </span>
+                        </div>
+                        <div class="test-card-meta mb-3">
+                            <div class="d-flex align-items-center text-muted mb-2">
+                                <i class="bi bi-clock me-2"></i>
+                                <span>25 minutes</span>
+                            </div>
+                            <div class="d-flex align-items-center text-muted mb-2">
+                                <i class="bi bi-question-circle me-2"></i>
+                                <span>10 Questions</span>
+                            </div>
+                            <div class="d-flex align-items-center text-success">
+                                <i class="bi bi-check-circle me-2"></i>
+                                <span>Available</span>
+                            </div>
+                        </div>
+                        <a href="test-taking.html?test=3" class="btn btn-primary w-100">
+                            <i class="bi bi-play-circle me-2"></i>Start Test
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div id="emptyState" class="text-center py-5 d-none">
+            <div class="empty-illustration mb-4 animated-float">
+                <div class="empty-icon-wrapper">
+                    <i class="bi bi-clipboard-x"></i>
+                </div>
+                <div class="empty-pulse"></div>
+            </div>
+            <h3 class="mt-3 mb-3">No Tests Available</h3>
+            <p class="text-muted mb-4">There are currently no tests available. New tests will appear here once they are published.</p>
+            
+            <div class="row g-3 mb-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="info-card-small card border-0 shadow-sm">
+                        <div class="card-body p-3">
+                            <i class="bi bi-clock-history text-primary mb-2" style="font-size: 2rem;"></i>
+                            <p class="small mb-0 text-muted">Check back later</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card-small card border-0 shadow-sm">
+                        <div class="card-body p-3">
+                            <i class="bi bi-headset text-primary mb-2" style="font-size: 2rem;"></i>
+                            <p class="small mb-0 text-muted">Contact support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="index.html" class="btn btn-primary mt-3">
+                <i class="bi bi-arrow-left me-2"></i>Back to Home
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5 mt-5 position-relative" style="z-index: 1;">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <span style="color: #0D6EFD;">Lingo</span><span style="color: #01438F;">fy</span>
+                    </h5>
+                    <p class="text-muted">Test your language level with confidence. Master languages through comprehensive assessments.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-muted text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="login.html" class="text-muted text-decoration-none">Login</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i>Coding School
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i>0770000000
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">&copy; 2024 Lingofy. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+

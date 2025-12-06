@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Lingofy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <span class="fw-bold" style="font-size: 1.3rem;">
+                    <span style="color: #0D6EFD;">Lingo</span><span style="color: #01438F;">fy</span>
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="student-tests.html">Tests</a>
+                    <a class="nav-link active" href="student-profile.html">Profile</a>
+                    <a class="nav-link" href="index.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-white border-bottom py-4">
+                        <h4 class="mb-0 fw-bold">
+                            <i class="bi bi-person-gear me-2"></i>Edit Profile
+                        </h4>
+                        <p class="text-muted mb-0 small">Update your account information</p>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="profileSettingsForm">
+                            <!-- Full Name -->
+                            <div class="mb-4">
+                                <label for="settingsFullName" class="form-label fw-semibold">
+                                    <i class="bi bi-person me-2"></i>Full Name
+                                </label>
+                                <input type="text" class="form-control form-control-lg" id="settingsFullName" placeholder="Enter your full name" required>
+                            </div>
+
+                            <!-- Email/Username -->
+                            <div class="mb-4">
+                                <label for="settingsEmail" class="form-label fw-semibold">
+                                    <i class="bi bi-envelope me-2"></i>Email/Username
+                                </label>
+                                <input type="text" class="form-control form-control-lg" id="settingsEmail" placeholder="Enter your email or username" required>
+                            </div>
+
+                            <!-- Password Section -->
+                            <div class="mb-4">
+                                <h6 class="fw-semibold mb-3">
+                                    <i class="bi bi-lock me-2"></i>Change Password
+                                </h6>
+                                <div class="alert alert-info">
+                                    <i class="bi bi-info-circle me-2"></i>Leave password fields empty if you don't want to change your password.
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="currentPassword" class="form-label fw-semibold">Current Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                        <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="newPassword" class="form-label fw-semibold">New Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-key"></i></span>
+                                        <input type="password" class="form-control" id="newPassword" placeholder="Enter new password (min 6 characters)">
+                                    </div>
+                                    <small class="text-muted">Password must be at least 6 characters long</small>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label fw-semibold">Confirm New Password</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-flex gap-3">
+                                <button type="submit" class="btn btn-primary btn-lg flex-fill">
+                                    <i class="bi bi-save me-2"></i>Save Changes
+                                </button>
+                                <a href="student-tests.html" class="btn btn-outline-secondary btn-lg">
+                                    <i class="bi bi-x-circle me-2"></i>Cancel
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-3">
+                        <span style="color: #0D6EFD;">Lingo</span><span style="color: #01438F;">fy</span>
+                    </h5>
+                    <p class="text-muted">Test your language level with confidence. Master languages through comprehensive assessments designed for students and educators.</p>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="text-muted mb-0">&copy; 2024 Lingofy. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/student-profile.js"></script>
+</body>
+</html>
+
